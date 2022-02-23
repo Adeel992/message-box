@@ -1,0 +1,14 @@
+function displayMsgBox(containerId, className, msg) {
+    var id = '#' + containerId;
+    jQuery(id).removeAttr('class');
+    jQuery(id).addClass(className);
+    jQuery(id).html(msg);
+    jQuery(id).show();
+    $('html, body').animate({
+        scrollTop: $(id).offset().top - 100
+    },
+        2000);
+    setTimeout(function () {
+        jQuery(id).hide()
+    }, 9000)
+}
